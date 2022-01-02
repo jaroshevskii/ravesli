@@ -15,7 +15,7 @@ void printNames(std::string *names, const size_t &numberOfNames) {
   std::cout << "Names:\n";
   for (size_t i = 0; i < numberOfNames; ++i)
     std::cout << "  #" << i + 1 << ": " << names[i] << '\n';
-  std::cout << '\n';`
+  std::cout << '\n';
 }
 
 int main() {
