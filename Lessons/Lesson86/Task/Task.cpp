@@ -11,7 +11,7 @@ void setNames(std::string *names, const size_t &numberOfNames) {
   std::cout << '\n';
 }
 
-void printNames(std::string *names, const size_t &numberOfNames) {
+void printNames(const std::string *names, const size_t &numberOfNames) {
   std::cout << "Names:\n";
   for (size_t i = 0; i < numberOfNames; ++i)
     std::cout << "  #" << i + 1 << ": " << names[i] << '\n';
