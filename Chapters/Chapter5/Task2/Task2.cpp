@@ -1,7 +1,6 @@
 #include <iostream>
 #include <random>
 
-/// Гра.
 void game(const int &generatedNumber, const int &numberOfAttempts) {
   std::cout << "A random number is generated. You have " << numberOfAttempts
             << " attempts to guess this number.\n";
@@ -32,7 +31,7 @@ int main() {
   std::mt19937 generator{std::random_device{}()};
   std::uniform_int_distribution<int> distribution{1, 100};
 
-  const int numberOfAttempts = 7; // Кількість спроб
+  const int numberOfAttempts = 7;
 
   while (true) {
     game(distribution(generator), numberOfAttempts);
