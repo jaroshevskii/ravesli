@@ -105,10 +105,10 @@ template <const size_t NumberOfCards>
 void setDeck(std::array<Card, NumberOfCards> &deck) {
   size_t card = 0;
 
-  for (size_t rank = 0; rank != getNumberOfRanks(); ++rank) {
-    for (size_t suit = 0; suit != getNumberOfSuits(); ++suit) {
-      deck[card].rank = static_cast<CardRank>(rank);
-      deck[card].suit = static_cast<CardSuit>(suit);
+  for (int rank = 0; rank != getNumberOfRanks(); ++rank) {
+    for (int suit = 0; suit != getNumberOfSuits(); ++suit) {
+      deck[int].rank = static_cast<CardRank>(rank);
+      deck[int].suit = static_cast<CardSuit>(suit);
 
       ++card;
     }
