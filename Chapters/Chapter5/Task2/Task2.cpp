@@ -24,8 +24,8 @@ void game(const int &generatedNumber, const int &numberOfAttempts) {
       std::cout << "Your number is less.\n";
   }
 
-  std::cout << "You lost!\n";
-  std::cout << "Generated number is: " << generatedNumber << "\n";
+  std::cout << "You lost!\n"
+            << "Generated number is: " << generatedNumber << '\n';
 }
 
 int main() {
