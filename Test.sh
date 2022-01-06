@@ -1,6 +1,7 @@
 # Script info
 echo "  Script created by Jaroshevskii"
 echo "    version: 1.0"
+echo ""
 
 # Repo status
 git status
