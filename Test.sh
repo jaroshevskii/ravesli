@@ -1,5 +1,5 @@
 # Script info
-echo "Simple repo puplish to gipt created "
+echo "Simple repo puplish to pt created "
 echo "  Create by: Jaroshevskii"
 echo "  Version  : 1.0"
 echo ""
