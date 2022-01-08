@@ -16,10 +16,10 @@ enum class CardRank {
   DAMA,
   KOROL,
   TYZ,
-  NUMBER_OF_RANKS
+  NUM_RANKS
 };
 
-enum class CardSuit { TREFU, BYBNU, CHERVU, PIKI, NUMBER_OF_SUITS };
+enum class CardSuit { TREFU, BYBNU, CHERVU, PIKI, NUM_SUITS };
 
 struct Card {
   CardRank rank;
@@ -89,34 +89,32 @@ void printCard(const Card &card) {
   }
 }
 
-constexpr size_t getNumberOfRanks() {
-  return static_cast<size_t>(CardRank::NUMBER_OF_RANKS);
+constexpr size_t getNumRanks() {
+  return static_cast<size_t>(CardRank::NUM_RANKS);
 }
 
-constexpr size_t getNumberOfSuits() {
-  return static_cast<size_t>(CardSuit::NUMBER_OF_SUITS);
+constexpr size_t getNumSuits() {
+  return static_cast<size_t>(CardSuit::NUM_SUITS);
 }
 
-constexpr size_t getNumberOfCards() {
-  return getNumberOfRanks() * getNumberOfSuits();
-}
+constexpr size_t getNumCards() { return getNumRanks() * getNumSuits(); }
 
-template <const size_t NumberOfCards>
-void setDeck(std::array<Card, NumberOfCards> &deck) {
+template <const size_t NumCards>
+void setDeck(std::array<Card, NumCards> &deck) {
   size_t card = 0;
 
-  for (int rank = 0; rank != getNumberOfRanks(); ++rank) {
-    for (int suit = 0; suit != getNumberOfSuits(); ++suit) {
-      deck[int].rank = static_cast<CardRank>(rank);
-      deck[int].suit = static_cast<CardSuit>(suit);
+  for (int rank = 0; rank < getNumRanks(); ++rank) {
+    for (int suit = 0; suit < getNumSuits(); ++suit) {
+      deck[card].rank = static_cast<CardRank>(rank);
+      deck[card].suit = static_cast<CardSuit>(suit);
 
       ++card;
     }
   }
 }
 
-template <const size_t NumberOfCards>
-void printDeck(const std::array<Card, NumberOfCards> &deck) {
+template <const size_t NumCards>
+void printDeck(const std::array<Card, NumCards> &deck) {
   std::cout << "Deck:";
 
   for (const auto &card : deck) {
@@ -128,12 +126,12 @@ void printDeck(const std::array<Card, NumberOfCards> &deck) {
 
 void swapCard(Card &first, Card &second) { std::swap(first, second); }
 
-template <const size_t NumberOfCards>
-void shuffleDeck(std::array<Card, NumberOfCards> &deck) {
+template <const size_t NumCards>
+void shuffleDeck(std::array<Card, NumCards> &deck) {
   std::mt19937 generator{std::random_device{}()};
-  std::uniform_int_distribution<size_t> distribution{1, NumberOfCards - 1};
+  std::uniform_int_distribution<size_t> distribution{0, NumCards - 1};
 
-  for (size_t card = 0; card != NumberOfCards; ++card)
+  for (size_t card = 0; card < NumCards; ++card)
     swapCard(deck[card], deck[distribution(generator)]);
 }
 
@@ -168,8 +166,8 @@ int getCardValue(const Card &card) {
 }
 
 int main() {
-  const size_t numberOfCards = getNumberOfCards();
-  std::array<Card, numberOfCards> deck;
+  const size_t numCards = getNumCards();
+  std::array<Card, numCards> deck;
 
   setDeck(deck);
   printDeck(deck);
