@@ -99,7 +99,7 @@ constexpr size_t getNumSuits() {
 
 constexpr size_t getNumCards() { return getNumRanks() * getNumSuits(); }
 
-template <const size_t NumCards>
+template <size_t NumCards>
 void setDeck(std::array<Card, NumCards> &deck) {
   size_t card = 0;
 
@@ -113,7 +113,7 @@ void setDeck(std::array<Card, NumCards> &deck) {
   }
 }
 
-template <const size_t NumCards>
+template <size_t NumCards>
 void printDeck(const std::array<Card, NumCards> &deck) {
   std::cout << "Deck:";
 
@@ -126,7 +126,7 @@ void printDeck(const std::array<Card, NumCards> &deck) {
 
 void swapCard(Card &first, Card &second) { std::swap(first, second); }
 
-template <const size_t NumCards>
+template <size_t NumCards>
 void shuffleDeck(std::array<Card, NumCards> &deck) {
   std::mt19937 generator{std::random_device{}()};
   std::uniform_int_distribution<size_t> distribution{0, NumCards - 1};
