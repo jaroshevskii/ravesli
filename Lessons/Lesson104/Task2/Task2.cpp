@@ -62,7 +62,7 @@ int main() {
   const double b = getNumber();
   std::cout << '\n';
 
-  cosnt auto function = getArithmeticFunction(oper);
+  const auto function = getArithmeticFunction(oper);
 
   std::cout << a << ' ' << oper << ' ' << b << " = " << function(a, b)
             << "\n\n";
