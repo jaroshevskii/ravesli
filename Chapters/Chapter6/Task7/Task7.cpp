@@ -21,10 +21,64 @@ enum class CardRank {
 
 enum class CardSuit { TREFU, BYBNU, CHERVU, PIKI, NUM_SUITS };
 
+constexpr size_t getNumRanks() {
+  return static_cast<size_t>(CardRank::NUM_RANKS);
+}
+
+constexpr size_t getNumSuits() {
+  return static_cast<size_t>(CardSuit::NUM_SUITS);
+}
+
+constexpr size_t getNumCards() { return getNumRanks() * getNumSuits(); }
+
 struct Card {
   CardRank rank;
   CardSuit suit;
 };
+
+int getCardValue(const Card &card) {
+  switch (card.rank) {
+  case CardRank::NUMBER_2:
+    return 2;
+  case CardRank::NUMBER_3:
+    return 3;
+  case CardRank::NUMBER_4:
+    return 4;
+  case CardRank::NUMBER_5:
+    return 5;
+  case CardRank::NUMBER_6:
+    return 6;
+  case CardRank::NUMBER_7:
+    return 7;
+  case CardRank::NUMBER_8:
+    return 8;
+  case CardRank::NUMBER_9:
+    return 9;
+  case CardRank::NUMBER_10:
+  case CardRank::VALET:
+  case CardRank::DAMA:
+  case CardRank::KOROL:
+    return 10;
+  case CardRank::TYZ:
+    return 11;
+  default:
+    return 0;
+  }
+}
+
+template <size_t NumCards>
+void setDeck(std::array<Card, NumCards> &deck) {
+  size_t card = 0;
+
+  for (int rank = 0; rank < getNumRanks(); ++rank) {
+    for (int suit = 0; suit < getNumSuits(); ++suit) {
+      deck[card].rank = static_cast<CardRank>(rank);
+      deck[card].suit = static_cast<CardSuit>(suit);
+
+      ++card;
+    }
+  }
+}
 
 void printCard(const Card &card) {
   switch (card.rank) {
@@ -89,31 +143,7 @@ void printCard(const Card &card) {
   }
 }
 
-constexpr size_t getNumRanks() {
-  return static_cast<size_t>(CardRank::NUM_RANKS);
-}
-
-constexpr size_t getNumSuits() {
-  return static_cast<size_t>(CardSuit::NUM_SUITS);
-}
-
-constexpr size_t getNumCards() { return getNumRanks() * getNumSuits(); }
-
-template <const size_t NumCards>
-void setDeck(std::array<Card, NumCards> &deck) {
-  size_t card = 0;
-
-  for (int rank = 0; rank < getNumRanks(); ++rank) {
-    for (int suit = 0; suit < getNumSuits(); ++suit) {
-      deck[card].rank = static_cast<CardRank>(rank);
-      deck[card].suit = static_cast<CardSuit>(suit);
-
-      ++card;
-    }
-  }
-}
-
-template <const size_t NumCards>
+template <size_t NumCards>
 void printDeck(const std::array<Card, NumCards> &deck) {
   std::cout << "Deck:";
 
@@ -124,45 +154,13 @@ void printDeck(const std::array<Card, NumCards> &deck) {
   std::cout << "\n\n";
 }
 
-void swapCard(Card &first, Card &second) { std::swap(first, second); }
-
-template <const size_t NumCards>
+template <size_t NumCards>
 void shuffleDeck(std::array<Card, NumCards> &deck) {
   std::mt19937 generator{std::random_device{}()};
   std::uniform_int_distribution<size_t> distribution{0, NumCards - 1};
 
   for (size_t card = 0; card < NumCards; ++card)
-    swapCard(deck[card], deck[distribution(generator)]);
-}
-
-int getCardValue(const Card &card) {
-  switch (card.rank) {
-  case CardRank::NUMBER_2:
-    return 2;
-  case CardRank::NUMBER_3:
-    return 3;
-  case CardRank::NUMBER_4:
-    return 4;
-  case CardRank::NUMBER_5:
-    return 5;
-  case CardRank::NUMBER_6:
-    return 6;
-  case CardRank::NUMBER_7:
-    return 7;
-  case CardRank::NUMBER_8:
-    return 8;
-  case CardRank::NUMBER_9:
-    return 9;
-  case CardRank::NUMBER_10:
-  case CardRank::VALET:
-  case CardRank::DAMA:
-  case CardRank::KOROL:
-    return 10;
-  case CardRank::TYZ:
-    return 11;
-  default:
-    return 0;
-  }
+    std::swap(deck[card], deck[distribution(generator)]);
 }
 
 int getPlayerChoise(const int &min, const int &max) {
@@ -183,7 +181,7 @@ int getPlayerChoise(const int &min, const int &max) {
   }
 }
 
-template <const size_t NumCards>
+template <size_t NumCards>
 void dealerTakesCards(const std::array<Card, NumCards> &deck, size_t &cardIndex,
                       int &dealerCount) {
   for (; dealerCount < 17; ++cardIndex)
@@ -192,7 +190,7 @@ void dealerTakesCards(const std::array<Card, NumCards> &deck, size_t &cardIndex,
 
 enum class GameResult { PLAYER_WON, PLAYER_LOST, DRAW };
 
-template <const size_t NumCards>
+template <size_t NumCards>
 GameResult playBlackjack(const std::array<Card, NumCards> &deck) {
   int dealerCount = getCardValue(deck[0]);
   int playerCount = getCardValue(deck[1]) + getCardValue(deck[2]);
