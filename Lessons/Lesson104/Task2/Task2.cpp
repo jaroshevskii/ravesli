@@ -57,14 +57,14 @@ arithmeticFunction getArithmeticFunction(const char &oper) {
 }
 
 int main() {
-  double a = getNumber();
-  char oper = getOperator();
-  double b = getNumber();
+  const double a = getNumber();
+  const char oper = getOperator();
+  const double b = getNumber();
   std::cout << '\n';
 
-  arithmeticFunction fuonction = getArithmeticFunction(oper);
+  cosnt auto function = getArithmeticFunction(oper);
 
-  std::cout << a << ' ' << oper << ' ' << b << " = " << fuonction(a, b)
+  std::cout << a << ' ' << oper << ' ' << b << " = " << function(a, b)
             << "\n\n";
   return 0;
 }
