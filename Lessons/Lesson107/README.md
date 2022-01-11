@@ -1,4 +1,4 @@
-# Урок №104. Указатели на функции
+# Урок №107. Указатели на функции
 
 Страница на [Ravesli](https://ravesli.com/urok-104-ukazateli-na-funktsii/).
 
