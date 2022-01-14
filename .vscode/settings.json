@@ -2,6 +2,29 @@
   "files.associations": {
     "iostream": "cpp",
     "array": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "*.tcc": "cpp",
+    "atomic": "cpp",
+    "unordered_map": "cpp",
+    "fstream": "cpp",
+    "limits": "cpp",
+    "sstream": "cpp",
+    "__hash_table": "cpp",
+    "__tree": "cpp",
+    "deque": "cpp",
+    "filesystem": "cpp",
+    "istream": "cpp",
+    "list": "cpp",
+    "locale": "cpp",
+    "map": "cpp",
+    "random": "cpp",
+    "set": "cpp",
+    "string": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "system_error": "cpp",
+    "__split_buffer": "cpp",
+    "iomanip": "cpp",
+    "ios": "cpp"
   }
 }
