@@ -2,12 +2,12 @@
 
 class Numbers {
 private:
-  double myA = 0.0;
-  double myB = 0.0;
-  double myC = 0.0;
+  double myA;
+  double myB;
+  double myC;
 
 public:
-  Numbers() {}
+  Numbers() : myA{}, myB{}, myC{} {}
 
   ~Numbers() {}
 

@@ -1,4 +1,4 @@
-# Урок №107. Рекурсия и Числа Фибоначчи
+# Урок №107. Рекурсия и Числа Фибоначи
 
 Страница на [Ravesli](https://ravesli.com/urok-107-rekursiya-chisla-fibonachchi-i-faktorial/).
 
