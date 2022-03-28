@@ -2,22 +2,20 @@
 
 class Numbers {
 private:
-  int myFirst;
-  int mySecond;
+  int myFirst{};
+  int mySecond{};
 
 public:
-  Numbers() : myFirst{}, mySecond{} {}
+  Numbers() = default;
 
   Numbers(int first, int second) : myFirst{first}, mySecond{second} {}
-
-  ~Numbers() {}
 
   void set(int first, int second) {
     myFirst = first;
     mySecond = second;
   }
 
-  void print() {
+  void print() const {
     std::cout << "Numbers(" << myFirst << ", " << mySecond << ")\n";
   }
 };
