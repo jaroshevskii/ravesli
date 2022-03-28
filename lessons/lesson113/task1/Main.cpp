@@ -21,7 +21,7 @@ public:
 };
 
 int main() {
-  Numbers n1;
+  Numbers n1{};
   n1.set(3, 3); // Initialize object n1 with values ​​3 and 3.
 
   Numbers n2{4, 4}; // Initialize object n2 with values ​​4 and 4.
