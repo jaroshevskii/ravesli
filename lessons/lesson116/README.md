@@ -1,6 +1,6 @@
 # Урок № 116. Кнструкторы
 
-Этот урок на <!-- FIX: Empty link --> [Ravesli]().
+Этот урок на [Ravesli](https://ravesli.com/urok-116-konstruktory/).
 
 ## Задание №1
 

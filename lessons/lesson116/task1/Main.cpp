@@ -2,24 +2,22 @@
 
 class Ball {
 private:
-  std::string myColor;
-  double myRadius;
+  std::string myColor{};
+  double myRadius{};
 
 public:
   Ball(double radius) : myColor{"red"}, myRadius{radius} {}
 
-  Ball(const std::string &color = std::string{"red"}, double radius = 20.0)
+  Ball(const std::string &color = "red", double radius = 20.0)
       : myColor{color}, myRadius{radius} {}
 
-  ~Ball() {}
-
-  void print() {
+  void print() const {
     std::cout << "color: " << myColor << ", radius: " << myRadius << '\n';
   }
 };
 
 int main() {
-  Ball def;
+  Ball def{};
   def.print();
 
   Ball black{"black"};
