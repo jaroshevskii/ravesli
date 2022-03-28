@@ -2,14 +2,12 @@
 
 class Numbers {
 private:
-  double myA;
-  double myB;
-  double myC;
+  double myA{};
+  double myB{};
+  double myC{};
 
 public:
-  Numbers() : myA{}, myB{}, myC{} {}
-
-  ~Numbers() {}
+  Numbers() = default;
 
   void setValues(double a, double b, double c) {
     myA = a;
@@ -17,20 +15,20 @@ public:
     myC = c;
   }
 
-  void print() {
+  void print() const {
     std::cout << '<' << myA << ", " << myB << ", " << myC << ">\n";
   }
 
-  bool isEqual(const Numbers &numbers) {
+  bool isEqual(const Numbers &numbers) const {
     return myA == numbers.myA && myB == numbers.myB && myC == numbers.myC;
   }
 };
 
 int main() {
-  Numbers point1;
+  Numbers point1{};
   point1.setValues(3.0, 4.0, 5.0);
 
-  Numbers point2;
+  Numbers point2{};
   point2.setValues(3.0, 4.0, 5.0);
 
   if (point1.isEqual(point2)) {
@@ -39,7 +37,7 @@ int main() {
     std::cout << "point1 and point2 are different\n";
   }
 
-  Numbers point3;
+  Numbers point3{};
   point3.setValues(7.0, 8.0, 9.0);
 
   if (point1.isEqual(point3)) {

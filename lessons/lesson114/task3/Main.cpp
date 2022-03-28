@@ -4,18 +4,16 @@
 
 class Stack {
 private:
-  std::array<int, 10> myElements;
-  size_t mySize;
+  std::array<int, 10> myElements{};
+  size_t mySize{};
 
 public:
-  Stack() : myElements{}, mySize{} {}
+  Stack() = default;
 
-  ~Stack() {}
-
-  void print() {
+  void print() const {
     std::cout << "( ";
 
-    for (size_t i = 0; i < mySize; ++i) {
+    for (int i = 0; i < mySize; ++i) {
       std::cout << myElements[i] << ' ';
     }
 
@@ -39,12 +37,13 @@ public:
 
   int pop() {
     assert(mySize != 0);
-    return myElements[--mySize];
+    --mySize;
+    return myElements[mySize];
   }
 };
 
 int main() {
-  Stack stack;
+  Stack stack{};
 
   stack.reset();
   stack.print();
