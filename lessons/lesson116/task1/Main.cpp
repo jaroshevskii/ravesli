@@ -17,16 +17,16 @@ public:
 };
 
 int main() {
-  Ball def{};
+  const auto def = Ball{};
   def.print();
 
-  Ball black{"black"};
+  const auto black = Ball{"black"};
   black.print();
 
-  Ball thirty{30.0};
+  const auto thirty = Ball{30.0};
   thirty.print();
 
-  Ball blackThirty{"black", 30.0};
+  const auto blackThirty = Ball{"black", 30.0};
   blackThirty.print();
   return 0;
 }
