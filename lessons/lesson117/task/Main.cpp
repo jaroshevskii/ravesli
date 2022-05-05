@@ -22,7 +22,7 @@ public:
 };
 
 int main() {
-  const RGBA color{0, 135, 135};
+  const auto color = RGBA{0, 135, 135};
   color.print();
   return 0;
 }
