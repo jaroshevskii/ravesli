@@ -13,7 +13,7 @@ public:
   void print() const {
     std::cout << "( ";
 
-    for (int i = 0; i < mySize; ++i) {
+    for (auto i = 0; i < mySize; ++i) {
       std::cout << myElements[i] << ' ';
     }
 
@@ -43,7 +43,7 @@ public:
 };
 
 int main() {
-  Stack stack{};
+  auto stack = Stack{};
 
   stack.reset();
   stack.print();

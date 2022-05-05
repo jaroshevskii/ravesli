@@ -25,25 +25,25 @@ public:
 };
 
 int main() {
-  Numbers point1{};
+  auto point1 = Numbers{};
   point1.setValues(3.0, 4.0, 5.0);
 
-  Numbers point2{};
+  auto point2 = Numbers{};
   point2.setValues(3.0, 4.0, 5.0);
 
   if (point1.isEqual(point2)) {
-    std::cout << "point1 and point2 are same\n";
+    std::cout << "point1 and point2 are same.\n";
   } else {
-    std::cout << "point1 and point2 are different\n";
+    std::cout << "point1 and point2 are different.\n";
   }
 
-  Numbers point3{};
+  auto point3 = Numbers{};
   point3.setValues(7.0, 8.0, 9.0);
 
   if (point1.isEqual(point3)) {
-    std::cout << "point1 and point2 are same\n";
+    std::cout << "point1 and point2 are same.\n";
   } else {
-    std::cout << "point1 and point2 are different\n";
+    std::cout << "point1 and point2 are different.\n";
   }
   return 0;
 }
