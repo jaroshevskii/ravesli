@@ -26,16 +26,16 @@ public:
 };
 
 int main() {
-  const Thing defl{};
+  const auto defl = Thing{};
   defl.print();
 
-  const Thing red{"red"};
+  const auto red = Thing{"red"};
   red.print();
 
-  const Thing thirty{30.0};
+  const auto thirty = Thing{30.0};
   thirty.print();
 
-  const Thing redThirty{"red", 30.0};
+  const auto redThirty = Thing{"red", 30.0};
   redThirty.print();
   return 0;
 }
