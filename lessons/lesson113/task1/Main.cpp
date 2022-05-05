@@ -21,10 +21,13 @@ public:
 };
 
 int main() {
-  Numbers n1{};
-  n1.set(3, 3); // Initialize object n1 with values ​​3 and 3.
-
-  Numbers n2{4, 4}; // Initialize object n2 with values ​​4 and 4.
+  auto n1 = Numbers{};
+  
+  // Initialize object n1 with values ​​3 and 3.
+  n1.set(3, 3);
+  
+  // Initialize object n2 with values ​​4 and 4.
+  const auto n2 = Numbers{4, 4};
 
   n1.print();
   n2.print();
