@@ -5,6 +5,7 @@ add_subdirectory(lesson114)
 add_subdirectory(lesson116)
 add_subdirectory(lesson117)
 add_subdirectory(lesson118)
+add_subdirectory(lesson126)
 
 add_custom_target(${PROJECT_NAME})
 add_dependencies(${PROJECT_NAME}
@@ -13,4 +14,5 @@ add_dependencies(${PROJECT_NAME}
   Lesson116
   Lesson117
   Lesson118
+  Lesson126
 )
