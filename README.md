@@ -8,4 +8,6 @@
 
 ### Other
 
+- Update [.gitignore](./.gitignore) file.
+
 - Remove [old](old/) folder.
