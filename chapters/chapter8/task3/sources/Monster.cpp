@@ -10,21 +10,21 @@ Monster::Monster(const Type &type, const std::string &name, int health)
 /// Returns the monster type as a string.
 std::string_view Monster::getTypeString() const {
   switch (myType) {
-  case Monster::Type::Dragon:
+  case Type::Dragon:
     return "Dragon";
-  case Monster::Type::Goblin:
+  case Type::Goblin:
     return "Goblin";
-  case Monster::Type::Ogre:
+  case Type::Ogre:
     return "Ogre";
-  case Monster::Type::Orc:
+  case Type::Orc:
     return "Orc";
-  case Monster::Type::Skeleton:
+  case Type::Skeleton:
     return "Skeleton";
-  case Monster::Type::Troll:
+  case Type::Troll:
     return "Troll";
-  case Monster::Type::Vampire:
+  case Type::Vampire:
     return "Vampire";
-  case Monster::Type::Zombie:
+  case Type::Zombie:
     return "Zombie";
   default:
     return "Unknown";
