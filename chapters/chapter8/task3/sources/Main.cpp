@@ -1,7 +1,6 @@
 #include "Monster.h"
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
 
 int main() {
   // Set initial seed value to system clock.
