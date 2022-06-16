@@ -2,11 +2,10 @@
 
 ## To Do
 
-### Lessons
-
-- **Empty**
-
-### Other
-
-- Update [.gitignore](./.gitignore) file.
-- Remove [old](old/) folder.
+- **Chapters:**
+  - Empty
+- **Lessons:**
+  - Empty
+- **Others:**
+  - Update [.gitignore](./.gitignore) file.
+  - Remove [old](./old/) folder.
