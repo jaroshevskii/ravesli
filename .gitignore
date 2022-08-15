@@ -11,5 +11,5 @@ build/*
 # !.vscode/launch.json
 # !.vscode/extensions.json
 
-# Cache files
+# Cache folder
 .cache/*
