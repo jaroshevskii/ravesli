@@ -11,5 +11,5 @@ build/*
 # !.vscode/launch.json
 # !.vscode/extensions.json
 
-# Cache folder
-.cache/*
+# The clangd extension for VS Code generates unnecessary cache.
+.cache/clangd/*
