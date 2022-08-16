@@ -3,14 +3,14 @@
 
 #include <iostream>
 
-Point3D::Point3D(double x, double y, double z) : myX{x}, myY{y}, myZ{z} {}
+Point3D::Point3D(double x, double y, double z) : x{x}, y{y}, z{z} {}
 
-void Point3D::print() const {
-  std::cout << "Point{" << myX << ", " << myY << ", " << myZ << "}\n";
+auto Point3D::print() const -> void {
+  std::cout << "Point{" << x << ", " << y << ", " << z << "}\n";
 }
 
-void Point3D::moveByVector(const Vector3D &vector) {
-  myX += vector.myX;
-  myY += vector.myY;
-  myZ += vector.myZ;
+auto Point3D::moveByVector(const Vector3D &vector) -> void {
+  x += vector.x;
+  y += vector.y;
+  z += vector.z;
 }

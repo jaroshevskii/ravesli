@@ -6,16 +6,16 @@
 /// Vector 3D.
 class Vector3D {
 private:
-  double myX{};
-  double myY{};
-  double myZ{};
+  double x{};
+  double y{};
+  double z{};
 
 public:
   Vector3D(double x = 0.0, double y = 0.0, double z = 0.0);
 
-  void print() const;
+  auto print() const -> void;
 
-  friend void Point3D::moveByVector(const Vector3D &vector);
+  friend auto Point3D::moveByVector(const Vector3D &vector) -> void;
 };
 
 #endif // VECTOR3D_H
