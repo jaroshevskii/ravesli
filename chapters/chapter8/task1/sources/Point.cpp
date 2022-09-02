@@ -2,15 +2,11 @@
 #include <cmath>
 #include <iostream>
 
-Point::Point(double a, double b) : myA{a}, myB{b} {}
+Point::Point(double a, double b) : a(a), b(b) {}
 
-/// Prints a point.
-void Point::print() const {
-  std::cout << "Point{" << myA << ", " << myB << "}\n";
-}
+void Point::print() const { std::cout << "Point(" << a << ", " << b << ")\n"; }
 
-/// Returns the distance between two points.
 double distanceFrom(const Point &first, const Point &second) {
-  return std::sqrt((first.myA - second.myA) * (first.myA - second.myA) +
-                   (first.myB - second.myB) * (first.myB - second.myB));
+  return std::sqrt((first.a - second.a) * (first.a - second.a) +
+                   (first.b - second.b) * (first.b - second.b));
 }

@@ -4,12 +4,13 @@
 /// Point.
 class Point {
 private:
-  double myA{};
-  double myB{};
+  double a = 0.0;
+  double b = 0.0;
 
 public:
-  Point(double a = 0.0, double b = 0.0);
-  
+  Point() = default;
+  Point(double a, double b);
+
   /// Prints a point.
   void print() const;
 

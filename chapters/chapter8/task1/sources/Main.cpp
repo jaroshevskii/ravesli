@@ -2,12 +2,13 @@
 #include <iostream>
 
 int main() {
-  const auto first = Point{};
-  const auto second = Point{2.0, 5.0};
+  const Point firstPoint;
+  firstPoint.print();
 
-  first.print();
-  second.print();
-  std::cout << "Distance between two points: " << distanceFrom(first, second)
-            << '\n';
+  const Point secondPoint(2.0, 5.0);
+  secondPoint.print();
+
+  std::cout << "Distance between two points: "
+            << distanceFrom(firstPoint, secondPoint) << '\n';
   return 0;
 }
