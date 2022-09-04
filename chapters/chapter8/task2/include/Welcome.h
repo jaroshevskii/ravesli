@@ -4,7 +4,7 @@
 /// Welcome.
 class Welcome {
 private:
-  char *myData{};
+  char *data = nullptr;
 
 public:
   Welcome();

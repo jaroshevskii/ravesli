@@ -2,15 +2,14 @@
 #include <iostream>
 
 Welcome::Welcome() {
-  myData = new char[14];
-  const auto *init = "Hello, World!";
+  data = new char[14];
+  const char *init = "Hello, World!";
 
-  for (auto i = 0; i < 14; ++i) {
-    myData[i] = init[i];
+  for (int i = 0; i < 14; ++i) {
+    data[i] = init[i];
   }
 }
 
-Welcome::~Welcome() { delete[] myData; }
+Welcome::~Welcome() { delete[] data; }
 
-/// Prints a welcome messange.
-void Welcome::print() const { std::cout << myData << '\n'; }
+void Welcome::print() const { std::cout << data << '\n'; }

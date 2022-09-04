@@ -1,7 +1,7 @@
 #include "Welcome.h"
 
 int main() {
-  const auto hello = Welcome{};
+  const Welcome hello;
   hello.print();
   return 0;
 }
